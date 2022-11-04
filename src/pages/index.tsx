@@ -8,7 +8,7 @@ import UseContextData from '../hook/UseContext'
 export default function Home(props) {
   const { DarkOn, tema } = UseContextData()
   return (
-    <div>
+    <div className={`${tema} dark:bg-gray-900`}>
       <Layout title='Bem - vindo(a) ao sistema'>
         {props.children}
         <Panel >
