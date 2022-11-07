@@ -14,10 +14,10 @@ export default function Layout(props: propsLayout) {
     const { DarkOn, tema } = UseContextData()
 
     return (
-        <div className={`flex ${tema} dark: bg-gradient-t  dark:from-slate-300 dark:to-slate-700 flex-col h-screen`}>
+        <div className={`flex ${tema} dark: bg-gradient-t  dark:from-slate-800 dark:to-slate-700 flex-col h-screen`}>
             <div className="flex flex-row flex-grow gap-0">
-                <div className={`flex flex-col  bg-gradient-to-t from-gray-200 to-gray-100 gap-0`} >
-                    <div className=" w-20 grow">
+                <div className={` h-full flex flex-col border border-gray-300 `} >
+                    <div className=" sm:w-20 grow">
                         <Sidebar text="Sidebar" ></Sidebar>
                     </div>
                     <div className="  w-20 h-10 mb-10 ">
@@ -26,7 +26,7 @@ export default function Layout(props: propsLayout) {
                         </ul>
                     </div>
                 </div>
-                <div className={` ${tema} dark:bg-slate-100 flex flex-col flex-grow gap-2`}>
+                <div className={` flex flex-col flex-grow gap-2`}>
                     <div className="flex flex-col">
                         <Breadcrumbs msg={props.title} />
                         {props.children}
@@ -34,7 +34,7 @@ export default function Layout(props: propsLayout) {
                 </div>
 
             </div>
-            <div className=" mt-3 bg-gradient-to-r from-cyan-700 to-cyan-400 flex flex-col  mb-0">
+            <div className=" mt-3 flex flex-col mb-0  dark:text-white dark:bg-gradient-to-t dark:from-blue-800  dark:to-blue-800">
                 <div className="  flex items-center justify-center">
                     <div className={`flex`}>
                         <Footer copyrigth="Copyright © 2022 Philips Labs ">
@@ -51,13 +51,5 @@ export default function Layout(props: propsLayout) {
 
         </div>
 
-
-
-
-
-
-
-
     )
 }
-
