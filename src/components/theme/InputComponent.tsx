@@ -1,9 +1,12 @@
-interface inputPropsAuth {
+import InputMask from 'react-input-mask';
+
+interface IInputProps {
+  name?: string,
+  mask?: string,
   label?: string,
   placeholder: string,
   value: any,
   required?: boolean
-  type: 'email' | 'text' | 'password' | 'textarea',
   modeRender?: boolean,
   changeValue?: (newValue: any) => void,
   height: string,
@@ -12,19 +15,19 @@ interface inputPropsAuth {
   md?: string,
   lg?: string,
   xl?: string,
-
-
 }
 
+type InputProps = JSX.IntrinsicElements['input'] & IInputProps
 
-export default function InputComponent(props: inputPropsAuth) {
+export default function InputComponent(props: InputProps) {
   return props.modeRender === false ? null :
     (
       <>
         {props.label && <label className="p-2 m-2">{props.label}</label>}
-        <input
+        <InputMask
+          mask={props.mask}
+          name={props.name}
           placeholder={props.placeholder}
-          type={props.type}
           value={props.value}
           required={props.required}
           onChange={e => props.changeValue?.(e.target.value)}
