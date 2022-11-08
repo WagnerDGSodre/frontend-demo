@@ -1,33 +1,43 @@
+import { iconAdd, iconHome, iconLogout, iconUsers, logoIcon } from "../icons"
+import Router from "next/router"
 import Link from "next/link"
-import { IconUtils } from "primereact"
-import UseContextData from "../../hook/UseContext"
-import { IconAdd, IconHome, IconUsers } from "../icons/Icons"
+
 import Logo from "./Logo"
-import MenuIten from "./MenuIten"
+import useContextData from "../../datas/hook/UseContext"
+import useAuth from "../../datas/hook/UseAuth"
+import MenuItem from "./MenuItem"
 
-interface propsSidebar {
-  text: string,
-  children?: any
-}
 
-export default function Sidebar(props: propsSidebar) {
-  return (
-    <aside className={`
-         flex item-center justify-center 
-         border-solid bg-gradient-to-t from-gray-200 to-gray-100  flex-col  border-gray-300`}>
-      <Logo
-        url="https://tse4.mm.bing.net/th/id/OIP.xwK7v6YtE8CT3Oz88y2VgwHaHa?w=177&h=180&c=7&r=0&o=5&pid=1.7"
-        with={40}
-        height={`auto`}
-        href="https://www.philips.com.br/healthcare/resources/landing/solucao-tasy"
-      />
+export default function Sidebar(){
+  const {logout} = useAuth()
+  const { DarkOn, tema } = useContextData()
+     return(
+      <aside className={` h-full ${tema}
+      flex item-center dark:text-white dark:bg-gradient-to-t dark:from-blue-600  dark:to-blue-600 
+      border-solid   flex-col  border-gray-300`}>
+        <div className={`p-2`}>
+        <Logo
+        mode={tema}
+        url="https://www.philips.com.br/c-etc/philips/clientlibs/foundation-general/clientlibs-css-rb2014/images/generic/philips-footer-logo.svg"
+        urlDark="https://philips.vtexassets.com/arquivos/trop-logo-footer.png"
+        with={60}
+         height={'h-80'}
+         href="https://www.philips.com.br/healthcare/resources/landing/solucao-tasy"
+         />
 
-      <ul>
-        <MenuIten icon={IconHome} title="Home" url='/'></MenuIten>
-        <MenuIten icon={IconAdd} title="Cadastro" url='patient'></MenuIten>
-        <MenuIten icon={IconUsers} title="Pesquisa" url='search/'></MenuIten>
-      </ul>
+        </div>
+          <ul className={`h-full flex-grow`}>            
+          <MenuItem url="/" text="Home" icon={iconHome} ></MenuItem>
+          <MenuItem url="/cadastro" text="Cadastro" icon={iconAdd} ></MenuItem>
+          <MenuItem url="/users" text="Patiets" icon={iconUsers} ></MenuItem>
+          </ul>
 
-    </aside>
-  )
+          <u>
+            <MenuItem onClick={()=> logout()} icon={iconLogout}
+             text="logout"/>
+          </u>
+
+
+        </aside>
+    )
 }

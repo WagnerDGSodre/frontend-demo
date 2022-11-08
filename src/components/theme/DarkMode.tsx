@@ -1,20 +1,29 @@
-import { IconMoon, IconSun } from "../icons/Icons"
+import { iconMoon, iconSum } from "../icons"
 
-interface propsButton{
-    tema:string,
-    alternarTema: () => void
+interface propsButton {
+    tema: string,
+    alternarTema: () => void,
+    className?:string
 }
 
-export default function DarkMode(props:propsButton){
+export default function DarkMode(props: propsButton) {
     return props.tema === "dark" ? (
-        <div className={`flex rauded-full flex-col cursor-pointer`} 
-        onClick={props.alternarTema}>
-           {IconMoon}
+        <div className={` ${props.className} mb-1 p-1 rounded-full flex cursor-pointer  border-solid border-2 border-indigo-200
+        items-center justify-center`} onClick={props.alternarTema}>
+        <label className="mr-3">Escuro</label>    
+        {iconMoon}
+        
+            
         </div>
-    ): (
-        <div className={`flex rauded-full flex-col cursor-pointer`} 
-        onClick={props.alternarTema}>
-        {IconSun}
+
+
+    ) : (
+        <div className={` mb-1 p-1  rounded-full flex cursor-pointer border-solid border-2 border-gray-700
+        items-center justify-center`} onClick={props.alternarTema}>
+        {iconSum}
+        <label className="mr-3">Claro</label>
+        
+        
         </div>
 
     )

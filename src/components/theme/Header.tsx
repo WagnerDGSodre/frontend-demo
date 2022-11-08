@@ -1,21 +1,25 @@
-import UseContextData from "../../hook/UseContext"
-import Breadcrumbs from "./Breadcrumbs"
+import useContextData from "../../datas/hook/UseContext";
+import Avatar from "./Avatar";
+import DarkMode from "./DarkMode";
+import Title from "./Title";
 
 interface propsHeader{
-  title?:string,
-  children?:any
-}
+    title:string,
+    subtitle:string,
+   }
 
-export default function Header(props:propsHeader){
- 
+export default function Header(props: propsHeader){
+const {DarkOn,tema} = useContextData()
+
     return(
-        <div className={` mt-0
-         flex flex-row h-20 w-8/12 bg-gradient-to-r from-blue-500 to-blue-400`}>
-         <Breadcrumbs  msg="Bem - vindo(a) ao sistema" />
-         {props.children}
-      
-         
-         </div>        
-       
+        <div className={`flex my-0 p-2 w-full`}>
+          <Title title={props.title} 
+          subtitle={props.subtitle}></Title>
+          <div className={`flex flex-grow items-center justify-end`}>
+          <DarkMode alternarTema={DarkOn} tema={tema} className="dark:text-white" />
+          <Avatar className="ml-4"/>
+          </div>           
+        </div>
     )
 }
+

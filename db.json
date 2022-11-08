@@ -1,0 +1,52 @@
+{
+  "pacientes": [
+    {
+      "id": 1,
+      "nome": "João Sousa",
+      "email": "joao@email.com",
+      "cpf": "joao@email.com"
+    },
+    {
+      "id": 2,
+      "nome": "Maria Silva",
+      "email": "maria@email.com",
+      "cpf": "maria@email.com"
+    },
+    {
+      "id": 3,
+      "nome": "José Campos",
+      "email": "jose@email.com",
+      "cpf": "jose@email.com"
+    },
+    {
+      "id": 4,
+      "nome": "Ana Oliveira",
+      "email": "ana@email.com",
+      "cpf": "ana@email.com"
+    },
+    {
+      "nome": "Chico Buaque",
+      "cpf": "89998889",
+      "email": "chicho",
+      "bairro": "dos Poetas",
+      "cep": "089565458",
+      "cidadeId": "Santa Catarina",
+      "complemento": "Prédio do chico",
+      "logradouro": "dua dos poetas",
+      "numero": "41",
+      "id": 5
+    },
+    {
+      "nome": "Wagner",
+      "cpf": "4435456567",
+      "email": "Wagner@philips.com",
+      "bairro": "",
+      "cep": "",
+      "cidadeId": null,
+      "complemento": "",
+      "logradouro": "",
+      "numero": "",
+      "id": 6
+    }
+  ]
+}
