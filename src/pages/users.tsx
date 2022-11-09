@@ -8,12 +8,13 @@ import { Paciente } from "../app/models/patients";
 
 export default function Users() {
   const service = usePacienteService()
+  const [id, setId] = useState<number>()
   const [nome, setNome] = useState('')
   const [email, setEmail] = useState('')
   const [cpf, setCpf] = useState('')
   const [bairro, setBairro] = useState('')
   const [cep, setCep] = useState('')
-  const [cidadeId, setCidadeId] = useState(null)
+  const [cidadeId, setCidadeId] = useState(0)
   const [complemento, setcomplemento] = useState('')
   const [logradouro, setLogradouro] = useState('')
   const [numero, setNumero] = useState('')
@@ -21,6 +22,7 @@ export default function Users() {
 
   const submter = () => {
     const paciente: Paciente = {
+      id,
       nome,
       cpf,
       email,
@@ -34,7 +36,11 @@ export default function Users() {
 
     console.log(paciente)
 
-    service.salvar(paciente).then(paciente => console.log(paciente))
+    service.Insert(paciente)
+    .then(paciente => {
+      setId(paciente.id)
+    })
+    
     //service.find().then(p => console.log(p.nome))
   
   }

@@ -37,16 +37,52 @@
       "id": 5
     },
     {
-      "nome": "Wagner",
-      "cpf": "4435456567",
-      "email": "Wagner@philips.com",
+      "nome": "",
+      "cpf": "",
+      "email": "",
       "bairro": "",
       "cep": "",
-      "cidadeId": null,
+      "cidadeId": 0,
       "complemento": "",
       "logradouro": "",
       "numero": "",
       "id": 6
+    },
+    {
+      "nome": "Chicho",
+      "cpf": "",
+      "email": "",
+      "bairro": "",
+      "cep": "",
+      "cidadeId": 0,
+      "complemento": "",
+      "logradouro": "",
+      "numero": "",
+      "id": 7
+    },
+    {
+      "nome": "DEDÉ",
+      "cpf": "",
+      "email": "",
+      "bairro": "",
+      "cep": "",
+      "cidadeId": 0,
+      "complemento": "",
+      "logradouro": "",
+      "numero": "",
+      "id": 8
+    },
+    {
+      "nome": "Jacare",
+      "cpf": "",
+      "email": "",
+      "bairro": "",
+      "cep": "",
+      "cidadeId": 0,
+      "complemento": "",
+      "logradouro": "",
+      "numero": "",
+      "id": 9
     }
   ]
 }

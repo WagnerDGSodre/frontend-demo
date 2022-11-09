@@ -5,6 +5,7 @@ import { iconLogout } from "../icons"
 import Breadcrumbs from "./Breadcrumbs"
 import DarkMode from "./DarkMode"
 import Footer from "./Footer"
+import ForceAuth from "./ForceAuth"
 import MenuItem from "./MenuItem"
 import Sidebar from "./Sidebar"
 
@@ -16,6 +17,7 @@ export default function Layout(props: propsLayout) {
     const { DarkOn, tema } = useContextData()
 
     return (
+        //<ForceAuth>
         <div className={`flex ${tema} dark: bg-gradient-t  dark:from-slate-800 dark:to-slate-700 flex-col h-screen`}>
             <div className="flex flex-row flex-grow gap-0">
                 <div className={` h-full flex flex-col border border-gray-300 `} >
@@ -48,6 +50,7 @@ export default function Layout(props: propsLayout) {
 
 
         </div>
+       // </ForceAuth>
 
     )
 }
